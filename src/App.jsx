@@ -1,15 +1,30 @@
 import React from 'react'
 import  './App.css'
 import  './index.css';
+import { Route, Routes } from 'react-router-dom';
+import MainLayout from './Components/MainLayout.jsx';
+import Home from './Pages/Home.jsx';
+import About from './Pages/About.jsx';
+import Services from './Pages/Services.jsx';
+import Contact from './Pages/Contact.jsx';
+import Projects from './Pages/Projects.jsx';
+import Skills from './Pages/Skills.jsx';
+
 
 const App = () => {
   return (
-    <div>
-      <h2>Welcome To My Portfolio Development</h2>
-      <h4 className='bg-orange-400 text-4xl font- text-slate-300 w-[80%] m-auto border-8  border-b-fuchsia-700 text-center px-20 py-4 rounded-3xl'>My Name IS BiiZii</h4>
-
-    </div>
+    <> 
+    <Routes> 
+      <Route path='/' element={<MainLayout />}> 
+        <Route index element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/skills' element={<Skills />} />
+      </Route>
+    </Routes>
+    </>
   )
 }
-
 export default App;
